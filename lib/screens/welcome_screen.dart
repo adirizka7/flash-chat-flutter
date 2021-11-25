@@ -22,22 +22,25 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: <Widget>[
             Row(
               children: <Widget>[
-                Container(
-                  child: Image.asset('images/logo.png'),
-                  height: 60.0,
-                ),
+                Hero(
+                  tag: 'logo',
+                  child: Container(
+                    child: Image.asset('images/logo.png'),
+                    height: 60.0,
+                  ), // Container
+                ), // Hero
                 Text(
                   'Flash Chat',
                   style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
-                  ),
-                ),
-              ],
-            ),
+                  ), // TextStyle
+                ), // Text
+              ], // <Widget>
+            ), // Row
             SizedBox(
               height: 48.0,
-            ),
+            ), // SizedBox
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
@@ -52,10 +55,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   height: 42.0,
                   child: Text(
                     'Log In',
-                  ),
-                ),
-              ),
-            ),
+                  ), // Text
+                ), // MaterialButton
+              ), // Material
+            ), // Padding
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
@@ -70,13 +73,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   height: 42.0,
                   child: Text(
                     'Register',
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+                  ), // Text
+                ), // MaterialButton
+              ), // Material
+            ), // Padding
+          ], // <Widget>
+        ), // Column
+      ), // Padding
+    ); // Scaffold
   }
 }

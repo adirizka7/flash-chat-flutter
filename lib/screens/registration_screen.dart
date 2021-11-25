@@ -18,13 +18,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              height: 200.0,
-              child: Image.asset('images/logo.png'),
-            ),
+            Hero(
+              tag: 'logo',
+              child: Container(
+                height: 200.0,
+                child: Image.asset('images/logo.png'),
+              ), // Container
+            ), // Hero
             SizedBox(
               height: 48.0,
-            ),
+            ), // SizedBox
             TextField(
               onChanged: (value) {
                 //Do something with the user input.
@@ -35,20 +38,20 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
+                ), // OutlineInputBorder
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
+                ), // OutlineInputBorder
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
-              ),
-            ),
+                ), // OutlineInputBorder
+              ), // InputDecoration
+            ), // TextField
             SizedBox(
               height: 8.0,
-            ),
+            ), // SizedBox
             TextField(
               onChanged: (value) {
                 //Do something with the user input.
@@ -59,20 +62,20 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
+                ), // OutlineInputBorder
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
+                ), // OutlineInputBorder
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
-              ),
-            ),
+                ), // OutlineInputBorder
+              ), // InputDecoration
+            ), // TextField
             SizedBox(
               height: 24.0,
-            ),
+            ), // SizedBox
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
@@ -88,13 +91,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   child: Text(
                     'Register',
                     style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+                  ), // Text
+                ), // MaterialButton
+              ), // Material
+            ), // Padding
+          ], // <Widget>
+        ), // Column
+      ), // Padding
+    ); // Scaffold
   }
 }
