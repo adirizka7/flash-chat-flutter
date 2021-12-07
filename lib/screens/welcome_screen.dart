@@ -18,15 +18,11 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   void initState() {
     super.initState();
-
     controller =
         AnimationController(duration: Duration(seconds: 1), vsync: this);
-
     animation = ColorTween(begin: Colors.blueGrey, end: Colors.white)
         .animate(controller);
-
     controller.forward();
-
     controller.addListener(() {
       setState(() {});
     });
@@ -68,45 +64,51 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             SizedBox(
               height: 48.0,
             ), // SizedBox
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                elevation: 5.0,
-                color: Colors.lightBlueAccent,
-                borderRadius: BorderRadius.circular(30.0),
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, LoginScreen.route);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Log In',
-                  ), // Text
-                ), // MaterialButton
-              ), // Material
-            ), // Padding
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(30.0),
-                elevation: 5.0,
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, RegistrationScreen.route);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Register',
-                  ), // Text
-                ), // MaterialButton
-              ), // Material
-            ), // Padding
+            ButtonWPadding(
+              onTap: () {
+                Navigator.pushNamed(context, LoginScreen.route);
+              },
+              text: 'Log In',
+              color: Colors.lightBlueAccent,
+            ),
+            ButtonWPadding(
+              onTap: () {
+                Navigator.pushNamed(context, RegistrationScreen.route);
+              },
+              text: 'Register',
+              color: Colors.blueAccent,
+            ),
           ], // <Widget>
         ), // Column
       ), // Padding
     ); // Scaffold
+  }
+}
+
+class ButtonWPadding extends StatelessWidget {
+  final Function onTap;
+  final String text;
+  final Color color;
+
+  ButtonWPadding({this.onTap, this.text, this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 16.0),
+      child: Material(
+        elevation: 5.0,
+        color: this.color,
+        borderRadius: BorderRadius.circular(30.0),
+        child: MaterialButton(
+          onPressed: this.onTap,
+          minWidth: 200.0,
+          height: 42.0,
+          child: Text(
+            this.text,
+          ), // Text
+        ), // MaterialButton
+      ), // Material
+    ); // Padding
   }
 }
