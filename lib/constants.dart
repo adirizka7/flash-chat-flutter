@@ -15,5 +15,19 @@ const kMessageTextFieldDecoration = InputDecoration(
 const kMessageContainerDecoration = BoxDecoration(
   border: Border(
     top: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
-  ),
+  ), // Border
 );
+
+const kBaseBorderInputDecoration = OutlineInputBorder(
+  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+); // OutlineInputBorder
+
+const kEnabledBorderInputDecoration = OutlineInputBorder(
+  borderSide: BorderSide(color: Colors.lightBlueAccent, width: 1.0),
+  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+); // OutlineInputBorder
+
+const kFocusedBorderInputDecoration = OutlineInputBorder(
+  borderSide: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
+  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+); // OutlineInputBorder
