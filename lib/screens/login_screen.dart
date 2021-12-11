@@ -34,14 +34,9 @@ class _LoginScreenState extends State<LoginScreen> {
               onChanged: (value) {
                 //Do something with the user input.
               },
-              decoration: InputDecoration(
+              decoration: kTextDecoration.copyWith(
                 hintText: 'Enter your email',
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                border: kBaseBorderInputDecoration,
-                enabledBorder: kEnabledBorderInputDecoration,
-                focusedBorder: kFocusedBorderInputDecoration,
-              ), // InputDecoration
+              ),
             ), // TextField
             SizedBox(
               height: 8.0,
@@ -50,14 +45,9 @@ class _LoginScreenState extends State<LoginScreen> {
               onChanged: (value) {
                 //Do something with the user input.
               },
-              decoration: InputDecoration(
-                hintText: 'Enter your password.',
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                border: kBaseBorderInputDecoration,
-                enabledBorder: kEnabledBorderInputDecoration,
-                focusedBorder: kFocusedBorderInputDecoration,
-              ), // InputDecoration
+              decoration: kTextDecoration.copyWith(
+                hintText: 'Enter your password',
+              ),
             ), // TextField
             SizedBox(
               height: 24.0,

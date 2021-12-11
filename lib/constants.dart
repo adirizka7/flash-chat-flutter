@@ -18,16 +18,21 @@ const kMessageContainerDecoration = BoxDecoration(
   ), // Border
 );
 
-const kBaseBorderInputDecoration = OutlineInputBorder(
-  borderRadius: BorderRadius.all(Radius.circular(32.0)),
-); // OutlineInputBorder
-
-const kEnabledBorderInputDecoration = OutlineInputBorder(
-  borderSide: BorderSide(color: Colors.lightBlueAccent, width: 1.0),
-  borderRadius: BorderRadius.all(Radius.circular(32.0)),
-); // OutlineInputBorder
-
-const kFocusedBorderInputDecoration = OutlineInputBorder(
-  borderSide: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
-  borderRadius: BorderRadius.all(Radius.circular(32.0)),
-); // OutlineInputBorder
+const kTextDecoration = InputDecoration(
+  hintText: 'Enter your password.',
+  hintStyle: TextStyle(
+    color: Colors.black26,
+  ), // TextStyle
+  contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.all(Radius.circular(32.0)),
+  ), // OutlineInputBorder
+  enabledBorder: OutlineInputBorder(
+    borderSide: BorderSide(color: Colors.lightBlueAccent, width: 1.0),
+    borderRadius: BorderRadius.all(Radius.circular(32.0)),
+  ), // OutlineInputBorder
+  focusedBorder: OutlineInputBorder(
+    borderSide: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
+    borderRadius: BorderRadius.all(Radius.circular(32.0)),
+  ), // OutlineInputBorder
+); // InputDecoration
