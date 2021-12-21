@@ -39,30 +39,30 @@ class _LoginScreenState extends State<LoginScreen> {
             ), // SizedBox
             TextField(
               onChanged: (value) {
-                email = email;
+                email = value;
               },
               style: TextStyle(
                 color: Colors.black,
-              ),
+              ), // TextStyle
               keyboardType: TextInputType.emailAddress,
               decoration: kTextDecoration.copyWith(
                 hintText: 'Enter your email',
-              ),
+              ), // kTextDecoration.copyWith
             ), // TextField
             SizedBox(
               height: 8.0,
             ), // SizedBox
             TextField(
               onChanged: (value) {
-                password = password;
+                password = value;
               },
               style: TextStyle(
                 color: Colors.black,
-              ),
+              ), // TextStyle
               obscureText: true,
               decoration: kTextDecoration.copyWith(
                 hintText: 'Enter your password',
-              ),
+              ), // kTextDecoration.copyWith
             ), // TextField
             SizedBox(
               height: 24.0,
