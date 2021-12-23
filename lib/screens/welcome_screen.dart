@@ -54,12 +54,13 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       'Flash Chat',
                       speed: Duration(milliseconds: 250),
                       textStyle: TextStyle(
+                        color: Colors.black,
                         fontSize: 40.0,
                         fontWeight: FontWeight.w900,
                       ), // TextStyle
-                    ),
-                  ],
-                ),
+                    ), // TypewriterAnimatedText
+                  ], // animatedTexts:
+                ), // AnimatedTextKit
               ], // <Widget>
             ), // Row
             SizedBox(
@@ -71,14 +72,14 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               },
               text: 'Log In',
               color: Colors.lightBlueAccent,
-            ),
+            ), // RoundedButton
             RoundedButton(
               onTap: () {
                 Navigator.pushNamed(context, RegistrationScreen.route);
               },
               text: 'Register',
               color: Colors.blueAccent,
-            ),
+            ), // RoundedButton
           ], // <Widget>
         ), // Column
       ), // Padding
