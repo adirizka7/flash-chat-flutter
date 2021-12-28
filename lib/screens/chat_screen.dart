@@ -35,6 +35,14 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
+  void messagesStream() async {
+    await for (var snapshot in _firestore.collection('messages').snapshots()) {
+      for (var message in snapshot.docs) {
+        print(message.data().cast());
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,13 +52,14 @@ class _ChatScreenState extends State<ChatScreen> {
           IconButton(
               icon: Icon(Icons.close),
               onPressed: () {
-                _auth.signOut();
-                Navigator.pop(context);
+                messagesStream();
+                // _auth.signOut();
+                // Navigator.pop(context);
               }),
-        ],
+        ], // <Widget>
         title: Text('⚡️Chat'),
         backgroundColor: Colors.lightBlueAccent,
-      ),
+      ), // AppBar
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,8 +76,8 @@ class _ChatScreenState extends State<ChatScreen> {
                         messageText = value;
                       },
                       decoration: kMessageTextFieldDecoration,
-                    ),
-                  ),
+                    ), // TextField
+                  ), // Expanded
                   FlatButton(
                     onPressed: () {
                       _firestore.collection('messages').add({
@@ -79,14 +88,14 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: Text(
                       'Send',
                       style: kSendButtonTextStyle,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+                    ), // Text
+                  ), // FlatButton
+                ], // <Widget>
+              ), // Row
+            ), // Container
+          ], // <Widget>
+        ), // Column
+      ), // SafeArea
+    ); // Scaffold
   }
 }
